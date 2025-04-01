@@ -24,13 +24,18 @@
           RomPatcherWeb.initialize(
             {
               language: "en", //default: en
-              requireValidation: false,
+              requireValidation: true,
+              allowDropFiles: true,
             },
             {
-              file: "./my_patch.zip", //zip containing patches
-              name: "Game (English v1.0)",
-              description: "English fan translation for Game",
-              outputName: "Game (English v1.0)", //patched ROM name
+              file: "patches.zip",
+              patches: [
+                {
+                  file: "emerald_imperium_v1.2.bps",
+                  name: "1.2",
+                  outputName: "Pokemon Emerald Imperium (World) (v1.2)",
+                },
+              ],
             }
           );
         } catch (err) {
